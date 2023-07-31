@@ -1,0 +1,219 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+.button-logo {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+.button-logo:hover {
+  transform: translateY(-3px) scale(1.02);
+  transition: all .1s ease-in;
+  color: white;
+  /* transform: scale(1.02); */
+}
+
+.logo {
+  position: relative;
+  left: -8px;
+}
+
+.span-logo {
+    color: white;
+}
+
+.button-logo:hover > h1 > span {
+  transition: color .1s ease-in;
+  color: gold;
+}
+
+
+.wrapper {
+  box-sizing: border-box;
+  /* padding: 50px; */
+  display: flex;
+  width: 100vw;
+  /* align-items: center; */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main-container {
+  max-width: 1280px;
+  width: 100vw;
+  height: 100vh;
+  max-height: 800px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 20px;  */
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar svg {
+  font-size: 30px;
+  color: #777;
+}
+
+.navbar-li a {
+  height: 30px;
+}
+
+.navbar li:hover {
+  transition: all .1s ease-in-out;
+  transform: scale(1.2);
+}
+
+.navbar-li:hover svg {
+  color: white;
+}
+
+.linkedin-li:hover svg {
+  color: #0a66c2;
+}
+
+.linkedin-background {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  transform: translateY(-36px) translateX(1px);
+}
+
+.linkedin-li:hover div {
+  background-color: white;
+  z-index: -1;
+}
+
+.main {
+  /* padding-left: 50px; */
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 100px;
+  height: calc(100% - 157px)
+}
+
+.message {
+  transition: all .2 linear;
+  animation: rightToLeft 1s ease-out;
+  backface-visibility: hidden;
+  position: relative;
+  margin-left: 30px;
+}
+
+.message-container {
+  position: relative;
+  max-width: 800px;
+}
+
+.message h1::before {
+  animation: topToBottom 1s ease-out;
+  transition: all .2 linear;
+  content: " ";
+  width: 2px;
+  background: white;
+  position: absolute;
+  top: 11px;
+  bottom: 0;
+  left: -30px;
+}
+
+.footer {
+  text-align: right;
+}
+
+.tech {
+  margin-top: 50px;
+  height: 50px;
+}
+
+.tech-logo {
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+
+#socketio-logo {
+  background-color: white;
+  border-radius: 100%;
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(100px)
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
