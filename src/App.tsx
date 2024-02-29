@@ -1,93 +1,121 @@
-import { useState } from 'react'
-import './App.css'
-import { SiGmail } from 'react-icons/si'
-import {BsLinkedin, BsGithub} from 'react-icons/bs'
-import reactLogo from "./assets/react_logo.png"
-import mongoDBLogo from "./assets/mongoDB_logo.png"
-import expressjsLogo from "./assets/expressjs_logo.png"
-import nodejsLogo from "./assets/nodejs_logo.png"
-import socketioLogo from "./assets/socketio_logo.svg"
-import brevoLogo from "./assets/brevo_logo.webp"
-import muiLogo from "./assets/mui_logo.png"
-import { Logo } from './components/icons'
+import { useState } from "react";
+import "./App.css";
+import { SiGmail } from "react-icons/si";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { projects, FreakyWorld, TennisStats, ShortenUrl, EventHub, StockHub, OnlineRecorder } from "./components/projects";
 
 function App() {
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState<string | undefined>(
+    localStorage.getItem("message") || undefined
+  );
+
+  const handleMessage = (message: string) => {
+    localStorage.setItem("message", message);
+    setMessage(message);
+  };
+
+  const removeMessage = () => {
+    localStorage.removeItem("message");
+    setMessage(undefined);
+  };
 
   return (
     <>
-      <div className='wrapper'>
-        <div className='main-container'>
-          <header className='header'>
-            <button className='button-logo' type='button' onClick={() => setMessage("")}>
-              <h1 className='logo'><span className='span-logo'>{"< "}</span>{"Cristian Robledo"}<span className='span-logo'>{" />"}</span></h1>
+      <div className="wrapper">
+        <div className="main-container">
+          <header className="header">
+            <button
+              className="button-logo"
+              type="button"
+              onClick={removeMessage}
+            >
+              <h1 className="logo">
+                <span className="span-logo">{"< "}</span>
+                {"Cristian Robledo"}
+                <span className="span-logo">{" />"}</span>
+              </h1>
             </button>
-            <ul className='navbar'>
-              <li className='navbar-li'>
+            <ul className="navbar">
+              <li className="navbar-li">
                 <a href="mailto:crobledoramos@gmail.com">
-                    <SiGmail/>
+                  <SiGmail />
                 </a>
               </li>
-              <li className='linkedin-li'>
-                <a href="mailto:crobledoramos@gmail.com">
+              <li className="linkedin-li">
+                <a
+                  href="https://www.linkedin.com/in/cristian-robledo-dev/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
                   <BsLinkedin />
-                  <div className='linkedin-background'></div>
+                  <div className="linkedin-background"></div>
                 </a>
               </li>
-              <li className='navbar-li'>
-                <a href="mailto:crobledoramos@gmail.com">
-                  <BsGithub/>
+              <li className="navbar-li">
+                <a
+                  href="https://github.com/crobledor92"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <BsGithub />
                 </a>
               </li>
-
             </ul>
           </header>
-          <main className='main'>
-            <section className='message-container'>
-              {message === "" &&
-              <article className='message'>
-                <h1>Welcome</h1>
-                <p>My name is Cristian Robledo, I'm a full stack developer based in Barcelona, Spain. Mainly focused on MERN stack.</p>
-                <p>Using techonlogy to offer solutions in order to make people's life better.</p>
-              </article>
-              }
-              {message === "freakyworld" &&
-              <article className='message'>
-                <h1>FreakyWorld</h1>
-                <p>Freakyworld is a <b>marketplace</b> prototype for those "Magic the gathering" cards lovers. You will be able to sell or put up on auction those cards you dont want anymore and buy or bid up for your desired cards.</p>
-                <div className='tech'>
-                  <img title="MongoDB logo" className="tech-logo" src={mongoDBLogo} alt="MongoDB logo"/>
-                  <img title="Express.js logo" className="tech-logo" src={expressjsLogo} alt="Express.js logo"/>
-                  <img title="React logo" className="tech-logo" src={reactLogo} alt="React logo"/>
-                  <img title="Node.js logo" className="tech-logo" src={nodejsLogo} alt="Node.js logo"/>
-                  <img id="socketio-logo" title="Socket.io logo" className="tech-logo" src={socketioLogo} alt="Socket.io logo"/>
-                  <img title="Material UI logo" className="tech-logo" src={muiLogo} alt="Material UI logo"/>
-                  <img title="Brevo logo" className="tech-logo" src={brevoLogo} alt="Brevo logo"/>
-                  <Logo/>
-                </div>
-              </article>
-
-              }
+          <main className="main">
+            <section className="message-container">
+              {!message && (
+                <article className="message">
+                  <h1 className="header1">Welcome</h1>
+                  <p>
+                  I'm Cristian Robledo Ramos, a Full stack developer with a master's in Full Stack Development. Specializing in crafting dynamic web applications using the MERN stack. My journey includes diverse projects, refining my problem-solving skills and keeping me at the forefront of technology trends. Eager to connect, collaborate, and turn ideas into reality through code. Explore my portfolio, and let's build something amazing together!
+                  </p>
+                </article>
+              )}
+              {message === "freakyworld" && (
+                <FreakyWorld />
+              )}
+              {message === "tennistats" && (
+                <TennisStats />
+              )}
+              {message === "shortenurl" && (
+                <ShortenUrl />
+              )}
+              {message === "stockhubpro" && (
+                <StockHub />
+              )}
+              {message === "eventhubconnect" && (
+                <EventHub />
+              )}
+              {message === "onlinerecorder" && (
+                <OnlineRecorder />
+              )}
             </section>
             <section>
-              <h2>Projects</h2>
-              <div className='projects-container'>
-                <div>
-                  <button onClick={() => setMessage("freakyworld")}>
-                    FreakyWorld
-                  </button>
-                </div>
-                <div>GoatStats</div>
+              <h1 className="legend-title">Projects</h1>
+              <div className="projects-container">
+                {projects.map(project => {
+                  return (
+                    <div className={`project ${message === project.id ? 'project-selected' : ''}`}>
+                      <a
+                        className="project-button"
+                        onClick={() => handleMessage(project.id)}
+                      >
+                        {project.name}
+                      </a>
+                    </div>
+                  )
+                })}
               </div>
             </section>
           </main>
-          <footer className='footer'>
+          {/* <footer className="footer">
             <p>©2023</p>
-          </footer>
+          </footer> */}
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
