@@ -1,28 +1,23 @@
-import { BiLink } from 'react-icons/bi'
-import { MongoDBLogo, NextAuth, Nextjs, Typescript } from '../icons'
+import { MongoDBLogo, NextAuthLogo, NextjsLogo, TailwindLogo, TremorLogo, TypescriptLogo } from '../icons'
+import ProjectUrls from '../ProjectUrls'
 
 const ShortenUrl = () => {
   return (
     <article className="message">
     <div className="message-header">
       <h1 className="header1">Shorten URL</h1>
-      <a
-        className="anchorURL"
-        href="https://freakyworld.onrender.com"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <BiLink color="white" />
-      </a>
+      <ProjectUrls url="https://shortenurl-crobledor.netlify.app/" github="https://github.com/crobledor92/Shorten-URL" />
     </div>
     <p>
     Is your go-to URL shortener for swift and efficient link management. Easily shorten any number of URLs while gaining insightful visit data for each shortened link. Streamline your link-sharing experience with this user-friendly tool, offering comprehensive analytics to track and optimize your online presence. Shorten URL empowers you to manage and measure your link engagements effortlessly.
     </p>
     <div className="tech">
-        <Nextjs />
+        <TypescriptLogo />
+        <NextjsLogo />
         <MongoDBLogo />
-        <NextAuth />
-        <Typescript />
+        <TailwindLogo />
+        <NextAuthLogo />
+        <TremorLogo />
     </div>
   </article>
   )

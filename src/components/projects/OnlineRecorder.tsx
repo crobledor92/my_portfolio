@@ -1,18 +1,12 @@
-import { BiLink } from "react-icons/bi";
+import ProjectUrls from "../ProjectUrls";
+import { ReactLogo, TailwindLogo, TypescriptLogo } from "../icons";
 
 const OnlineRecorder = () => {
   return (
     <article className="message">
       <div className="message-header">
         <h1 className="header1">Online Recorder</h1>
-        <a
-          className="anchorURL"
-          href="https://freakyworld.onrender.com"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <BiLink color="white" />
-        </a>
+        <ProjectUrls url="https://online-recorder.netlify.app/" github="https://github.com/crobledor92/Online-Recorder" />
       </div>
       <p>
         A versatile web tool designed for capturing
@@ -23,7 +17,11 @@ const OnlineRecorder = () => {
         their recordings in their preferred file extension, enhancing the
         overall accessibility and usability of the online recording experience.
       </p>
-      <div className="tech"></div>
+      <div className="tech">
+        <TypescriptLogo />
+        <ReactLogo />
+        <TailwindLogo />
+      </div>
     </article>
   );
 };

@@ -68,7 +68,7 @@ function App() {
                 <article className="message">
                   <h1 className="header1">Welcome</h1>
                   <p>
-                  I'm Cristian Robledo Ramos, a Full stack developer with a master's in Full Stack Development. Specializing in crafting dynamic web applications using the MERN stack. My journey includes diverse projects, refining my problem-solving skills and keeping me at the forefront of technology trends. Eager to connect, collaborate, and turn ideas into reality through code. Explore my portfolio, and let's build something amazing together!
+                  I'm Cristian Robledo Ramos, a Full stack developer. Specializing in crafting dynamic web applications using the MERN stack. My journey includes diverse projects, refining my problem-solving skills and keeping me at the forefront of technology trends. Eager to connect, collaborate, and turn ideas into reality through code. Explore my portfolio, and don't hesitate to contact me. Let's build something amazing together!
                   </p>
                 </article>
               )}

@@ -187,6 +187,10 @@
   transition: all 0.2s ease-in-out;
 }
 
+
+
+
+
 .project::before {
   content: " ";
   width: 1px;
@@ -239,17 +243,39 @@
   letter-spacing: 1px;
 }
 
-.anchorURL {
+.project-links {
+  display: flex;
+  gap: 20px;
+  align-content: center;
+  margin-left: 5px;
+}
+
+.project-links a {
+  color: white;
+  font-size: x-large;
+  transition: all .2s ease-in-out;
+  border-radius: 50%;
+  margin: 10px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-content: center;
-  padding: 5px;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    transform: scale(1.2);
+    transition: all .4s ease-in-out;
+  }
 }
 
-.anchorURL:hover {
-  background-color: rgba(128, 128, 128, 0.363);
-  border-radius: 50%;
+#github:hover {
+  background-color: rgba(255, 166, 0, 0.512);
 }
 
+#url:hover {
+  background-color: #0a66c2;
+}
 
 .footer {
   text-align: right;
@@ -260,10 +286,21 @@
   height: 50px;
 }
 
+.tech > * {
+  animation: rightToLeft .3s ease-out backwards;
+}
+
+.tech :nth-child(1) { animation-delay: 0.1s; }
+.tech :nth-child(2) { animation-delay: .2s; }
+.tech :nth-child(3) { animation-delay: .3s; }
+.tech :nth-child(4) { animation-delay: .4s; }
+.tech :nth-child(5) { animation-delay: .5s; }
+.tech :nth-child(6) { animation-delay: .6s; }
+.tech :nth-child(7) { animation-delay: .7s; }
+.tech :nth-child(8) { animation-delay: .8s; }
+
 .tech-logo {
   margin-right: 20px;
-  width: 50px;
-  height: 50px;
 }
 
 

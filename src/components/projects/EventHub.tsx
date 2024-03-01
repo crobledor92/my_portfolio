@@ -1,4 +1,5 @@
 import { BiLink } from 'react-icons/bi'
+import { LaravelLogo, MySQLLogo, PHPLogo } from '../icons'
 
 const EventHub = () => {
   return (
@@ -18,7 +19,9 @@ const EventHub = () => {
     EventHub Connect is a dynamic website facilitating seamless interaction between companies and engaged listeners. Users can sign in, subscribe to upcoming events, and access event-related documents. Admins wield comprehensive control, managing events, information, and user interactions effortlessly. From adding and removing listeners to overseeing speakers, EventHub Connect ensures a smooth and organized experience for both event organizers and participants.
     </p>
     <div className="tech">
-
+      <PHPLogo />
+      <LaravelLogo />
+      <MySQLLogo />
     </div>
   </article>
   )

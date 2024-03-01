@@ -1,4 +1,3 @@
-import { BiLink } from "react-icons/bi";
 import {
   SocketIOLogo,
   MongoDBLogo,
@@ -7,21 +6,16 @@ import {
   NodeJSLogo,
   MaterialUILogo,
   BrevoLogo,
+  JavascriptLogo,
 } from "../icons";
+import ProjectUrls from "../ProjectUrls";
 
 const FreakyWorld = () => {
   return (
     <article className="message">
       <div className="message-header">
         <h1 className="header1">FreakyWorld</h1>
-        <a
-          className="anchorURL"
-          href="https://freakyworld.onrender.com"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <BiLink color="white" />
-        </a>
+        <ProjectUrls url="https://freakyworld.onrender.com" github="https://github.com/crobledor92/Freakyworld" />
       </div>
       <p>
         Freakyworld is a <b>marketplace</b> prototype for those "Magic the
@@ -30,6 +24,7 @@ const FreakyWorld = () => {
         cards.
       </p>
       <div className="tech">
+        <JavascriptLogo />
         <MongoDBLogo />
         <ExpressLogo />
         <ReactLogo />

@@ -1,4 +1,5 @@
 import { BiLink } from "react-icons/bi";
+import { HibernateLogo, JUnitLogo, JakartaLogo, JavaLogo, MySQLLogo } from "../icons";
 
 const StockHub = () => {
   return (
@@ -21,7 +22,13 @@ const StockHub = () => {
         StockHub Pro streamlines your business processes, empowering your team
         for enhanced productivity and precision in stock and client management.
       </p>
-      <div className="tech"></div>
+      <div className="tech">
+        <JavaLogo/>
+        <MySQLLogo />
+        <HibernateLogo />
+        <JakartaLogo />
+        <JUnitLogo />
+      </div>
     </article>
   );
 };
